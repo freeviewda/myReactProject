@@ -1,6 +1,7 @@
 // id값을 이용해 영화를 구분하는 상세 페이지
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Xxx from "../components/Xxx";
 
 function Detail() {
   const { id } = useParams();
@@ -24,13 +25,7 @@ function Detail() {
   if (loading) return <h1>Loading...</h1>;
   if (!movie) return <h1>Movie not found</h1>;
 
-  return (
-    <div>
-      <h1>{movie.title}</h1>
-      <img src={movie.posterURL} alt={movie.title} />
-      <p>ID: {movie.id}</p>
-    </div>
-  );
+  return <Xxx movie={movie} />;
 }
 
 export default Detail;
